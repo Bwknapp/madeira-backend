@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Madeira de Art</title>
+
+<link rel="icon" type="image/png" href="favicon.png">
+
+  <link rel="stylesheet" href="style.css">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  >
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+  <div class="container nav">
+
+    <h1>
+      Madeira de Art
+    </h1>
+
+    <div class="cart-icon" onclick="abrirCarrinho()">
+
+      <i class="fas fa-shopping-cart"></i>
+
+      <span id="cart-count">
+        0
+      </span>
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="container hero-content">
+
+    <div class="hero-text">
+
+      <span class="tag">
+        Decoração Premium em MDF
+      </span>
+
+      <h2>
+        Arte moderna para transformar ambientes
+      </h2>
+
+      <p>
+        Peças modernas, artesanais e únicas
+        para decorar seu ambiente.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PRODUTOS -->
+
+<section class="produtos">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <span>
+        Produtos
+      </span>
+
+      <h2>
+        Mais vendidos
+      </h2>
+
+    </div>
+
+    <div class="produtos-grid">
+
+      <!-- PRODUTO -->
+
+      <div class="produto-card">
+
+        <img
+          src="https://i.ibb.co/hJZ9qQBb/Screenshot-2026-05-18-20-47-05.png"
+          alt="Produto"
+        >
+
+        <div class="produto-info">
+
+          <h3>
+            Lembrancinha de festa de 15 anos
+          </h3>
+
+          <p>
+            Apenas 20 unidades por vez, acima apenas por pedido, 9 cm de altura.
+          </p>
+
+          <div class="produto-bottom">
+
+            <span>
+              R$ 3
+            </span>
+
+            <button
+              onclick="adicionarCarrinho(
+                'Lembrancinha de festa de 15 anos',
+                3
+              )"
+            >
+              Adicionar
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- PRODUTO -->
+
+      <div class="produto-card">
+
+        <img
+          src="https://i.ibb.co/XrXzrJ0p/Screenshot-2026-05-18-20-43-32.png"
+          alt="Produto"
+        >
+
+        <div class="produto-info">
+
+          <h3>
+            Porta Chave
+          </h3>
+
+          <p>
+            Porta chaves casinha em MDF, 20 x 15 cm
+          </p>
+
+          <div class="produto-bottom">
+
+            <span>
+              R$ 15
+            </span>
+
+            <button
+              onclick="adicionarCarrinho(
+                'Porta Chave',
+                15
+              )"
+            >
+              Adicionar
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- PRODUTO -->
+
+      <div class="produto-card">
+
+        <img
+          src="https://i.ibb.co/KzrjmrTQ/Screenshot-2026-05-18-20-47-01.png"
+          alt="Produto"
+        >
+
+        <div class="produto-info">
+
+          <h3>
+            Porta Joia
+          </h3>
+
+          <p>
+            Porta joia com divisórias, 15 x 15 x 5 cm.
+          </p>
+
+          <div class="produto-bottom">
+
+            <span>
+              R$ 20
+            </span>
+
+            <button
+              onclick="adicionarCarrinho(
+                'Porta Joia',
+                20
+              )"
+            >
+              Adicionar
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- PRODUTO -->
+
+      <div class="produto-card">
+
+        <img
+          src="https://i.ibb.co/bMpC1LPv/Screenshot-2026-05-18-20-46-52.png"
+          alt="Produto"
+        >
+
+        <div class="produto-info">
+
+          <h3>
+            Placas Informativas
+          </h3>
+
+          <p>
+            placas informativas, para personalização entrar em contato, 30 x 25
+          </p>
+
+          <div class="produto-bottom">
+
+            <span>
+              R$ 15
+            </span>
+
+            <button
+              onclick="adicionarCarrinho(
+                'Placas Informativas',
+                15
+              )"
+            >
+              Adicionar
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+ <!-- PRODUTO -->
+
+      <div class="produto-card">
+
+        <img
+          src="https://i.ibb.co/Q7rHn3JB/Screenshot-2026-05-18-20-46-46.png"
+          alt="Produto"
+        >
+
+        <div class="produto-info">
+
+          <h3>
+            Cofre
+          </h3>
+
+          <p>
+            Cofre de MDF, 10 x 5 x 13 cmm
+          </p>
+
+          <div class="produto-bottom">
+
+            <span>
+              R$ 10
+            </span>
+
+            <button
+              onclick="adicionarCarrinho(
+                'Cofre',
+                10
+              )"
+            >
+              Adicionar
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+ <!-- PRODUTO -->
+
+      <div class="produto-card">
+
+        <img
+          src="https://i.ibb.co/V0FDzgr6/Screenshot-2026-05-18-20-45-09.png"
+          alt="Produto"
+        >
+
+        <div class="produto-info">
+
+          <h3>
+            Caixa tampa articulada
+          </h3>
+
+          <p>
+            Caixinha de MDF, 20 x 15 x 6.
+          </p>
+
+          <div class="produto-bottom">
+
+            <span>
+              R$ 20
+            </span>
+
+            <button
+              onclick="adicionarCarrinho(
+                'Caixa tampa articulada',
+                20
+              )"
+            >
+              Adicionar
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+ <!-- PRODUTO -->
+
+      <div class="produto-card">
+
+        <img
+          src="https://i.ibb.co/9m8dS8wN/Screenshot-2026-05-18-20-45-20.png"
+          alt="Produto"
+        >
+
+        <div class="produto-info">
+
+          <h3>
+            Cactos
+          </h3>
+
+          <p>
+            Cactos em mdf, 15 cm de altura
+          </p>
+
+          <div class="produto-bottom">
+
+            <span>
+              R$ 10
+            </span>
+
+            <button
+              onclick="adicionarCarrinho(
+                'Cactos',
+                10
+              )"
+            >
+              Adicionar
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+ <!-- PRODUTO -->
+
+      <div class="produto-card">
+
+        <img
+          src="https://i.ibb.co/JW0DFB6D/Screenshot-2026-05-18-20-45-40.png"
+          alt="Produto"
+        >
+
+        <div class="produto-info">
+
+          <h3>
+            Porta vinho
+          </h3>
+
+          <p>
+            Porta vinho em MDF, 9 x 9 x 35
+          </p>
+
+          <div class="produto-bottom">
+
+            <span>
+              R$ 30
+            </span>
+
+            <button
+              onclick="adicionarCarrinho(
+                'Porta vinho',
+                30
+              )"
+            >
+              Adicionar
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+ <!-- PRODUTO -->
+
+      <div class="produto-card">
+
+        <img
+          src="https://i.ibb.co/fdnRTvyj/Screenshot-2026-05-18-20-46-22.png"
+          alt="Produto"
+        >
+
+        <div class="produto-info">
+
+          <h3>
+            Sagrada familia
+          </h3>
+
+          <p>
+            Sagrada familia de MDF, 20 de diamêtro
+          </p>
+
+          <div class="produto-bottom">
+
+            <span>
+              R$ 15
+            </span>
+
+            <button
+              onclick="adicionarCarrinho(
+                'Sagrada família',
+                15
+              )"
+            >
+              Adicionar
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+<!-- PRODUTO -->
+
+      <div class="produto-card">
+
+        <img
+          src="https://i.ibb.co/MDFq1B0B/Screenshot-2026-05-18-20-46-11.png"
+          alt="Produto"
+        >
+
+        <div class="produto-info">
+
+          <h3>
+            Caixinhas lembrancinhas
+          </h3>
+
+          <p>
+            Caixinhas de MDF, 6 x 6 x 6 cm.
+          </p>
+
+          <div class="produto-bottom">
+
+            <span>
+              R$ 5
+            </span>
+
+            <button
+              onclick="adicionarCarrinho(
+                'Caixinhas MDF',
+                5
+              )"
+            >
+              Adicionar
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+<!-- PRODUTO -->
+
+      <div class="produto-card">
+
+        <img
+          src="https://i.ibb.co/YTBP7X1V/Screenshot-2026-05-20-21-21-13.png"
+          alt="Produto"
+        >
+
+        <div class="produto-info">
+
+          <h3>
+            Caixa primeira comunhão
+          </h3>
+
+          <p>
+            Caixinhas de MDF para primeira comunhão, 10 x 10 x 7 cm.
+          </p>
+
+          <div class="produto-bottom">
+
+            <span>
+              R$ 10
+            </span>
+
+            <button
+              onclick="adicionarCarrinho(
+                'Caixa primeira comunhão',
+                10
+              )"
+            >
+              Adicionar
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+<!-- PRODUTO -->
+
+      <div class="produto-card">
+
+        <img
+          src="https://i.ibb.co/4n3ybKV2/Screenshot-2026-05-20-21-21-25.png"
+          alt="Produto"
+        >
+
+        <div class="produto-info">
+
+          <h3>
+            Caixa cofre 10.000
+          </h3>
+
+          <p>
+            Caixa desafio 10.000 reais, 20 x 7 x 20  cm.
+          </p>
+
+          <div class="produto-bottom">
+
+            <span>
+              R$ 30
+            </span>
+
+            <button
+              onclick="adicionarCarrinho(
+                'Caixa cofre 10.000',
+                30
+              )"
+            >
+              Adicionar
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+<!-- PRODUTO -->
+
+      <div class="produto-card">
+
+        <img
+          src="https://i.ibb.co/v41mV81H/Screenshot-2026-05-20-21-21-32.png"
+          alt="Produto"
+        >
+
+        <div class="produto-info">
+
+          <h3>
+            Placas decorativas
+          </h3>
+
+          <p>
+            Decoração em MDF, 40 x 25 cm.
+          </p>
+
+          <div class="produto-bottom">
+
+            <span>
+              R$ 30
+            </span>
+
+            <button
+              onclick="adicionarCarrinho(
+                'Placas decorativas',
+                30
+              )"
+            >
+              Adicionar
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+<!-- PRODUTO -->
+
+      <div class="produto-card">
+
+        <img
+          src="https://i.ibb.co/TDRz09h4/Screenshot-2026-05-20-21-21-39.png"
+          alt="Produto"
+        >
+
+        <div class="produto-info">
+
+          <h3>
+            Caixas lisas
+          </h3>
+
+          <p>
+            Caixa, 20 x 15 x 10 cm, caso queira um tamanho diferente entre em contato, preço varia conforme o tamanho
+          </p>
+
+          <div class="produto-bottom">
+
+            <span>
+              R$ 15 
+            </span>
+
+            <button
+              onclick="adicionarCarrinho(
+                'Caixas lisas',
+                15
+              )"
+            >
+              Adicionar
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+<!-- PRODUTO -->
+
+      <div class="produto-card">
+
+        <img
+          src="https://i.ibb.co/gFRY3SNh/Screenshot-2026-05-20-21-21-47.png"
+          alt="Produto"
+        >
+
+        <div class="produto-info">
+
+          <h3>
+            Porta retrato Profições
+          </h3>
+
+          <p>
+            Porta retrato, caso queira outra profição, entre em contato, para fotos 10 x 15.
+          </p>
+
+          <div class="produto-bottom">
+
+            <span>
+              R$ 15
+            </span>
+
+            <button
+              onclick="adicionarCarrinho(
+                'Porta retrato Profições',
+                15
+              )"
+            >
+              Adicionar
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+<!-- PRODUTO -->
+
+      <div class="produto-card">
+
+        <img
+          src="https://i.ibb.co/0y5FYGzc/Screenshot-2026-05-20-21-21-54.png"
+          alt="Produto"
+        >
+
+        <div class="produto-info">
+
+          <h3>
+            Nossa senhora
+          </h3>
+
+          <p>
+            Nossa senhora  MDF, 10 cm.
+          </p>
+
+          <div class="produto-bottom">
+
+            <span>
+              R$ 5
+            </span>
+
+            <button
+              onclick="adicionarCarrinho(
+                'Nossa senhora',
+                5
+              )"
+            >
+              Adicionar
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+<!-- PRODUTO -->
+
+      <div class="produto-card">
+
+        <img
+          src="https://i.ibb.co/ndDTPdt/Screenshot-2026-05-20-21-22-05.png"
+          alt="Produto"
+        >
+
+        <div class="produto-info">
+
+          <h3>
+            Caixa colecionador da copa 26
+          </h3>
+
+          <p>
+            Caixa colecionador da copa 2026, 30 x 26 x 10 cm.
+          </p>
+
+          <div class="produto-bottom">
+
+            <span>
+              R$ 55
+            </span>
+
+            <button
+              onclick="adicionarCarrinho(
+                'Caixa de colecionador da copa 26',
+                55
+              )"
+            >
+              Adicionar
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+<!-- PRODUTO -->
+
+      <div class="produto-card">
+
+        <img
+          src="https://i.ibb.co/vGqkQhT/Screenshot-2026-05-22-13-18-11.png"
+          alt="Produto"
+        >
+
+        <div class="produto-info">
+
+          <h3>
+            Chaveirinhos gratidão
+          </h3>
+
+          <p>
+            Chaveirinho de MDF com argola, 5 x 5 cm, apenas acima de 50. 
+          </p>
+
+          <div class="produto-bottom">
+
+            <span>
+              R$ 60
+            </span>
+
+            <button
+              onclick="adicionarCarrinho(
+                'Chaveirinho gratidão',
+                60
+              )"
+            >
+              Adicionar
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+<!-- PRODUTO -->
+
+      <div class="produto-card">
+
+        <img
+          src="https://i.ibb.co/6cfmpjTd/Screenshot-2026-05-20-21-21-07.png"
+          alt="Produto"
+        >
+
+        <div class="produto-info">
+
+          <h3>
+            Oratórios
+          </h3>
+
+          <p>
+            Oratórios de MDF, 20 cm.
+          </p>
+
+          <div class="produto-bottom">
+
+            <span>
+              R$ 30
+            </span>
+
+            <button
+              onclick="adicionarCarrinho(
+                'Oratórios',
+                30
+              )"
+            >
+              Adicionar
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<p class="aviso-produtos">Mais produtos em breve</p>
+
+<!-- CARRINHO -->
+
+<div class="cart-overlay" id="cart-modal">
+
+  <div class="cart-box">
+
+    <div class="cart-header">
+
+      <h2>
+        Seu Carrinho
+      </h2>
+
+      <button onclick="fecharCarrinho()">
+        ✕
+      </button>
+
+    </div>
+
+    <div id="cart-items" class="cart-items">
+
+    </div>
+
+    <div class="cart-footer">
+
+      <h3>
+        Total:
+        R$
+        <span id="cart-total">
+          0
+        </span>
+      </h3>
+
+      <button
+        class="checkout-btn"
+        onclick="finalizarCompra()"
+      >
+        Finalizar Compra
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container footer-content">
+
+    <h2>
+      Madeira de Art
+    </h2>
+
+    <p>
+      WhatsApp: (42) 99964-5842
+    </p>
+
+    <p>
+      Instagram: @Madeira_de_Art
+    </p>
+
+  </div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
