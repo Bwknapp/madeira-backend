@@ -94,15 +94,56 @@ async function finalizarCompra() {
   if (carrinho.length === 0) {
 
     alert('Carrinho vazio');
+
     return;
 
   }
 
+  // CAMPOS DO CLIENTE
+
+  const nome =
+    document.getElementById('nome').value;
+
+  const telefone =
+    document.getElementById('telefone').value;
+
+  const endereco =
+    document.getElementById('endereco').value;
+
+  const cidade =
+    document.getElementById('cidade').value;
+
+  const cep =
+    document.getElementById('cep').value;
+
+  // SEGURANÇA EXTRA
+
+  if (
+    !nome ||
+    !telefone ||
+    !endereco ||
+    !cidade ||
+    !cep
+  ) {
+
+    alert('Preencha todos os campos');
+
+    return;
+
+  }
+
+  // PRODUTOS
+
   const items = carrinho.map(produto => ({
+
     title: produto.nome,
+
     quantity: 1,
+
     unit_price: Number(produto.preco),
+
     currency_id: 'BRL'
+
   }));
 
   try {
@@ -110,11 +151,27 @@ async function finalizarCompra() {
     const response = await fetch(
       'https://madeira-backend.vercel.app/create_preference',
       {
+
         method: 'POST',
+
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ items })
+
+        body: JSON.stringify({
+
+          items,
+
+          cliente: {
+            nome,
+            telefone,
+            endereco,
+            cidade,
+            cep
+          }
+
+        })
+
       }
     );
 
@@ -122,7 +179,8 @@ async function finalizarCompra() {
 
     if (data.init_point) {
 
-      window.location.href = data.init_point;
+      window.location.href =
+        data.init_point;
 
     } else {
 
@@ -139,3 +197,59 @@ async function finalizarCompra() {
   }
 
 }
+
+/* =========================================
+   LIBERAR BOTÃO AUTOMATICAMENTE
+========================================= */
+
+const camposCheckout = document.querySelectorAll(
+  '#nome, #telefone, #endereco, #cidade, #cep'
+);
+
+const botaoCheckout =
+  document.getElementById(
+    'checkout-button'
+  );
+
+function verificarFormulario() {
+
+  let formularioCompleto = true;
+
+  camposCheckout.forEach(campo => {
+
+    if (campo.value.trim() === '') {
+
+      formularioCompleto = false;
+
+    }
+
+  });
+
+  if (formularioCompleto) {
+
+    botaoCheckout.disabled = false;
+
+    botaoCheckout.classList.remove(
+      'disabled'
+    );
+
+  } else {
+
+    botaoCheckout.disabled = true;
+
+    botaoCheckout.classList.add(
+      'disabled'
+    );
+
+  }
+
+}
+
+camposCheckout.forEach(campo => {
+
+  campo.addEventListener(
+    'input',
+    verificarFormulario
+  );
+
+});

@@ -887,22 +887,60 @@
 
     </div>
 
-    <div class="cart-footer">
+<div class="cart-footer">
 
-      <h3>
-        Total:
-        R$
-        <span id="cart-total">
-          0
-        </span>
-      </h3>
+  <h3>
+    Total:
+    R$
+    <span id="cart-total">
+      0
+    </span>
+  </h3>
 
-      <button
-        class="checkout-btn"
-        onclick="finalizarCompra()"
-      >
-        Finalizar Compra
-      </button>
+  <div class="checkout-form">
+
+    <input
+      type="text"
+      id="nome"
+      placeholder="Nome completo"
+    >
+
+    <input
+      type="text"
+      id="telefone"
+      placeholder="Telefone"
+    >
+
+    <input
+      type="text"
+      id="endereco"
+      placeholder="Endereço"
+    >
+
+    <input
+      type="text"
+      id="cidade"
+      placeholder="Cidade"
+    >
+
+    <input
+      type="text"
+      id="cep"
+      placeholder="CEP"
+    >
+
+  </div>
+
+<button
+  class="checkout-btn disabled"
+  id="checkout-button"
+  onclick="finalizarCompra()"
+  disabled
+>
+  Finalizar Compra
+</button>
+
+</div>
 
     </div>
 
@@ -911,7 +949,7 @@
 </div>
 
 <!-- FOOTER -->
-
+  
 <footer>
 
   <div class="container footer-content">
