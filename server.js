@@ -1,120 +1,67 @@
 const express = require('express');
 const cors = require('cors');
-const mercadopago = require('mercadopago');
-
-const { createClient } =
-  require('@supabase/supabase-js');
+const { MercadoPagoConfig, Preference } = require('mercadopago');
+const { createClient } = require('@supabase/supabase-js');
 
 const app = express();
 
-app.use(cors());
+app.use(cors({ origin: '*' }));
 app.use(express.json());
 
-/* =========================================
-   MERCADO PAGO
-========================================= */
-
-mercadopago.configure({
-  access_token:
-    'APP_USR-1771978546796941-051617-38ba5e0efe6897805c17f8ea1d731a1c-3407518652'
+// Mercado Pago
+const client = new MercadoPagoConfig({
+  accessToken: 'APP_USR-1771978546796941-051617-38ba5e0efe6897805c17f8ea1d731a1c-3407518652'
 });
 
-/* =========================================
-   SUPABASE
-========================================= */
-
+// Supabase
 const supabase = createClient(
   'https://xyekjiwxhlptjwdfslbi.supabase.co',
-  'sb_publishable_H5NDENC2f2MnNfW1Xm9H3Q_diGGKXH_'
+  'sb_secret_4v3XvA9qlznbCc3_GJjK3Q_wclhgUnR'
 );
 
-/* =========================================
-   CRIAR PAGAMENTO
-========================================= */
-
 app.post('/create_preference', async (req, res) => {
-
   try {
+    const { items, cliente } = req.body;
 
-    const {
-      items,
-      cliente
-    } = req.body;
-
-    /* =====================================
-       SALVAR PEDIDO
-    ===================================== */
-
-    const { error } =
-      await supabase
-        .from('pedidos')
-        .insert([
-          {
-            nome: cliente.nome,
-            telefone: cliente.telefone,
-            endereco: cliente.endereco,
-            cidade: cliente.cidade,
-            cep: cliente.cep,
-            items: items
-          }
-        ]);
-
-    if (error) {
-
-      console.log(
-        'Erro Supabase:',
-        error
-      );
-
+    if (!items || !cliente) {
+      return res.status(400).json({ error: 'Dados incompletos' });
     }
 
-    /* =====================================
-       MERCADO PAGO
-    ===================================== */
+    // Salvar no Supabase
+    await supabase.from('pedidos').insert([{
+      nome: cliente.nome,
+      telefone: cliente.telefone,
+      endereco: cliente.endereco,
+      cidade: cliente.cidade,
+      cep: cliente.cep,
+      items: items,
+      status: 'pendente',
+      created_at: new Date().toISOString()
+    }]);
 
-    const preference = {
-      items: items
-    };
-
-    const response =
-      await mercadopago.preferences.create(
-        preference
-      );
-
-    res.json({
-      init_point:
-        response.body.init_point
+    // Mercado Pago
+    const preference = new Preference(client);
+    
+    const response = await preference.create({
+      body: {
+        items: items,
+        back_urls: {
+          success: "https://madeiradeart.vercel.app",
+          failure: "https://madeiradeart.vercel.app",
+          pending: "https://madeiradeart.vercel.app"
+        },
+        auto_return: "approved",
+      }
     });
+
+    res.json({ init_point: response.init_point });
 
   } catch (error) {
-
-    console.log(error);
-
-    res.status(500).json({
-      error:
-        'Erro ao criar pagamento'
-    });
-
+    console.error('Erro completo:', error);
+    res.status(500).json({ error: error.message });
   }
-
 });
 
-/* =========================================
-   TESTE
-========================================= */
+app.get('/', (req, res) => res.send('Backend online'));
 
-app.get('/', (req, res) => {
-
-  res.send('Backend online');
-
-});
-
-/* =========================================
-   SERVIDOR
-========================================= */
-
-app.listen(3000, () => {
-
-  console.log('Servidor rodando');
-
-});
+app.listen(3000, () => console.log('Servidor rodando'));
